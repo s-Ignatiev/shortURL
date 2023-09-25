@@ -25,7 +25,7 @@ RUN docker-php-ext-install pdo_mysql && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./php/php.ini /usr/local/etc/php/conf.d/php.ini
-COPY ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
+#COPY ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- \
@@ -37,4 +37,6 @@ RUN pwd
 RUN cd /var/www && composer install
 
 WORKDIR /var/www
-USER sanders
+USER $UNAME
+
+

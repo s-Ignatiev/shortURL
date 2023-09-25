@@ -39,7 +39,6 @@ services:
         UNAME: sanders
         UID: 1000
         GID: 1000
-
       dockerfile: ./mysql/Dockerfile
     restart: always
     volumes:
