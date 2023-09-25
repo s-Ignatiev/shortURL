@@ -25,18 +25,14 @@ RUN docker-php-ext-install pdo_mysql && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./php/php.ini /usr/local/etc/php/conf.d/php.ini
-#COPY ./php/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- \
     --filename=composer \
-    --install-dir=/usr/local/bin \
-
-RUN pwd
-
-RUN cd /var/www && composer install
+    --install-dir=/usr/local/bin
 
 WORKDIR /var/www
+
+#RUN cd /var/www && composer install
+
 USER $UNAME
-
-
