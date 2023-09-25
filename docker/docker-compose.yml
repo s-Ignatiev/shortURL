@@ -6,7 +6,7 @@ services:
     image: nginx:1.25.2
     restart: unless-stopped
     volumes:
-      - ../app:/var/www
+      - ../app:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     ports:
       - 8080:80
@@ -17,14 +17,14 @@ services:
 
   php:
     build:
-#      context: ../app/
+#      context: .
       dockerfile: ./php/Dockerfile
     container_name: php-shortURL
     restart: unless-stopped
     depends_on:
       - mysql
     volumes:
-      - ../app:/var/www
+      - ../app:/var/www/html
 
   mysql:
 #    image: mysql:8.0
