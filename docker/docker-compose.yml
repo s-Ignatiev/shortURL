@@ -6,7 +6,7 @@ services:
     image: nginx:1.25.2
     restart: unless-stopped
     volumes:
-      - ../app:/var/www/html
+      - ../app:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     ports:
       - "8080:80"

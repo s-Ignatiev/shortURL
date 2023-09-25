@@ -34,5 +34,5 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 
 RUN composer install
 
-WORKDIR /var/www/html
+WORKDIR /var/www
 USER sanders
