@@ -14,6 +14,7 @@
 /app/auth.json
 /app/npm-debug.log
 /app/yarn-error.log
+/app/test.php
 !/db
 /db/*
 !/db/.empty
