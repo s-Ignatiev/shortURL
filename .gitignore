@@ -14,8 +14,9 @@
 /app/auth.json
 /app/npm-debug.log
 /app/yarn-error.log
-!/db/.empty
+!/db
 /db/*
+!/db/.empty
 /.fleet
 /.idea
 /.vscode
